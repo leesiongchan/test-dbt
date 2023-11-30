@@ -1,11 +1,11 @@
 WITH
 stg_events AS (
     SELECT
-        e._airbyte_data.dateCreated::TEXT AS date_created,
-        e._airbyte_data.id::INTEGER,
-        e._airbyte_data.groupID::INTEGER AS group_id,
-        e._airbyte_data.title::TEXT AS culprit,
-        e._airbyte_data.tags
+        _airbyte_data.dateCreated::TEXT AS date_created,
+        _airbyte_data.id::INTEGER,
+        _airbyte_data.groupID::INTEGER AS group_id,
+        _airbyte_data.title::TEXT AS culprit,
+        _airbyte_data.tags
     FROM {{ source('airbyte', '_airbyte_raw_events')}}
 ),
 events AS (
