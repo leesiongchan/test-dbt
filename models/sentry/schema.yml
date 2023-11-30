@@ -8,7 +8,7 @@ sources:
       - name: _airbyte_raw_events
 
 models:
-  - name: events_view
+  - name: events
     description: "A starter dbt model"
     columns:
       - name: id
@@ -31,7 +31,7 @@ models:
           - accepted_values:
               values: ['background', 'crash']
 
-  - name: issues_view
+  - name: issues
     description: "A starter dbt model"
     columns:
       - name: id

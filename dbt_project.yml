@@ -33,4 +33,4 @@ models:
   analytics:
     # Config indicated by + and applies to all files under models/example/
     sentry:
-      +materialized: view
+      +materialized: materialized view

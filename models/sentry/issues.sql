@@ -3,7 +3,7 @@ issues AS (
     SELECT
         group_id AS id,
         COUNT(report_type) AS total_errors
-    FROM {{ ref('events_view') }}
+    FROM {{ ref('events') }}
     GROUP BY group_id
 )
 
