@@ -16,6 +16,20 @@ models:
         tests:
           - unique
           - not_null
+      - name: date_created
+        description: Date created
+      - name: group_id
+        description: Issue ID
+        tests:
+          - unique
+          - not_null
+      - name: culprit
+        description: Error message
+      - name: report_type
+        description: Report type
+        tests:
+          - accepted_values:
+              values: ['background', 'crash']
 
   - name: issues
     description: "A starter dbt model"
@@ -25,3 +39,6 @@ models:
         tests:
           - unique
           - not_null
+      - name: total_errors
+        description: Total errors
+
