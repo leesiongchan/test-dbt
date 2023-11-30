@@ -1,4 +1,4 @@
-SET enable_case_sensitive_super_attribute to TRUE;
+-- SET enable_case_sensitive_super_attribute to TRUE;
 
 WITH
 stg_events AS (
