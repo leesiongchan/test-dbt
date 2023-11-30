@@ -1,11 +1,11 @@
 WITH
 stg_events AS (
     SELECT
-        {{ json_extract_scalar('_airbyte_data', ['dateCreated']) }}::TEXT AS {{ adapter.quote('date_created') }},
-        {{ json_extract_scalar('_airbyte_data', ['id']) }}::INTEGER,
-        {{ json_extract_scalar('_airbyte_data', ['groupID']) }}::INTEGER AS {{ adapter.quote('group_id') }},
-        {{ json_extract_scalar('_airbyte_data', ['culprit']) }}::TEXT,
-        {{ json_extract_scalar('_airbyte_data', ['tags']) }}
+        e._airbyte_data.dateCreated::TEXT AS date_created,
+        e._airbyte_data.id::INTEGER,
+        e._airbyte_data.groupID::INTEGER AS group_id,
+        e._airbyte_data.title::TEXT AS culprit,
+        e._airbyte_data.tags
     FROM {{ source('airbyte', '_airbyte_raw_events')}}
 ),
 events AS (
