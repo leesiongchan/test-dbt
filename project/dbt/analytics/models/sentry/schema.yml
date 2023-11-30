@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: airbyte
+    database: dev
+    schema: public
+    tables:
+      - name: _airbyte_raw_events
+
+models:
+  - name: events
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: issues
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
