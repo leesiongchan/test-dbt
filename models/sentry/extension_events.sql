@@ -7,7 +7,7 @@ WITH sentry_events AS (
         projectid AS project_id,
         tags,
         title
-    FROM {{ ref('airbyte_events') }}
+    FROM {{ source('airbyte', 'airbyte_events') }}
 ),
 cet_sentry_events AS (
     SELECT

@@ -1,5 +1,12 @@
 version: 2
 
+sources:
+  - name: airbyte
+    database: analytics
+    schema: hoho
+    tables:
+      - name: airbyte_events
+
 models:
   - name: extension_events
     columns:
