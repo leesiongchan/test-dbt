@@ -9,7 +9,7 @@ WITH sentry_events AS (
         title
     FROM {{ source('airbyte', 'airbyte_events') }}
     {% if is_incremental() %}
-    WHERE _airbyte_emitted_at > (SELECT MAX(this._airbyte_emitted_at) FROM {{ this }}) this
+    WHERE _airbyte_emitted_at > (SELECT MAX(this._airbyte_emitted_at) FROM {{ this }} this)
     {% endif %}
 
 ),
