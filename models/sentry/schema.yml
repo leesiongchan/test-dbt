@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: airbyte
     database: analytics
-    schema: hoho
+    schema: fun
     tables:
       - name: airbyte_events
 
