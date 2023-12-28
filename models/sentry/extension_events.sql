@@ -6,7 +6,8 @@ WITH sentry_events AS (
         groupid AS group_id,
         projectid AS project_id,
         tags,
-        title
+        title,
+        _airbyte_emitted_at
     FROM {{ source('airbyte', 'airbyte_events') }}
     {% if is_incremental() %}
     WHERE _airbyte_emitted_at > (SELECT MAX(this._airbyte_emitted_at) FROM {{ this }} this)
